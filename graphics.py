@@ -44,24 +44,3 @@ class Line():
         canvas.create_line(self.point_1.x, self.point_1.y, self.point_2.x, self.point_2.y, fill=fill_color, width =2)
 
 
-class Cell():
-    def __init__(self, x1, y1, x2, y2):
-        self.has_left_wall = True
-        self.has_right_wall = True
-        self.has_top_wall = True
-        self.has_bottom_wall = True
-        self.__x1 = x1
-        self.__x2 = x2
-        self.__y1 = y1
-        self.__y2 = y2
-
-    def draw(self, canvas, fill_color="black"):
-        if self.has_left_wall:
-            canvas.create_line(self.__x1, self.__y1, self.__x1, self.__y2, fill = fill_color, width = 1)
-        if self.has_right_wall:
-            canvas.create_line(self.__x2, self.__y1, self.__x2, self.__y2, fill = fill_color, width = 1)
-        if self.has_top_wall:
-            canvas.create_line(self.__x1, self.__y1, self.__x2, self.__y1, fill = fill_color, width = 1)
-        if self.has_bottom_wall:
-            canvas.create_line(self.__x1, self.__y2, self.__x2, self.__y2, fill = fill_color, width = 1)
-
